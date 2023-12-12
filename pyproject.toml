@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tftanalysis"
+version = "0.1.0"
+description = "This pis package can show the match history, players info, and match analysis of tft game."
+authors = ["Amanda Tan"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
