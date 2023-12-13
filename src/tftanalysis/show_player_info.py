@@ -16,6 +16,14 @@ from tabulate import tabulate
 
 # Function to retrieve and display the TFT data as a DataFrame
 def fetch_tft_data_to_dataframe(api_key):
+    """Fetches TFT data for a given summoner and displays it as a DataFrame.
+
+    Args:
+    - api_key (str): Riot API Key for authorization.
+
+    Returns:
+    - pd.DataFrame or None: DataFrame containing TFT data or None if no data found.
+    """
     # Function to get summoner ID
     def get_summoner_id(summoner_name, api_key):
         url = f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}"
@@ -59,6 +67,14 @@ def fetch_tft_data_to_dataframe(api_key):
             
 # Function to ask the user which specific data they want to check
 def get_user_selected_data(df):
+    """Allows the user to select specific TFT data to display from the DataFrame.
+
+    Args:
+    - df (pd.DataFrame): DataFrame containing TFT data.
+
+    Returns:
+    - None
+    """
     columns = df.columns.tolist()
     columns.append('Stop')
 
@@ -88,11 +104,17 @@ def get_user_selected_data(df):
             print("Invalid selection. Please enter a valid number or type 'Stop' to end.")
 
 def get_user_api_key():
+    """Prompts the user to enter their Riot API Key.
+
+    Returns:
+    - str: User-entered Riot API Key.
+    """
     # Prompt the user to enter their API key
     api_key = input("Please enter your Riot API Key: ").strip()
     return api_key
 
 def main_menu():
+    """Main function to execute the TFT Player Information System."""
     print("Welcome to the TFT Player Information System.")
     user_api_key = get_user_api_key()
 
